@@ -82,6 +82,56 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void AddTest4_AddFiveValues_DoesCapacityDouble()
+        {
+            // arrange
+            CustomList<int> testList = new CustomList<int>();
+            int itemToAdd1 = 10;
+            int itemToAdd2 = 20;
+            int itemToAdd3 = 30;
+            int itemToAdd4 = 40;
+            int itemToAdd5 = 50;
+            int expected = 8;
+            int actual;
+
+            // act
+            testList.Add(itemToAdd1);
+            testList.Add(itemToAdd2);
+            testList.Add(itemToAdd3);
+            testList.Add(itemToAdd4);
+            testList.Add(itemToAdd5);
+            actual = testList.Capacity;
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void AddTest4_AddFiveValues_DoesCountFitInCapacity()
+        {
+            // arrange
+            CustomList<int> testList = new CustomList<int>();
+            int itemToAdd1 = 10;
+            int itemToAdd2 = 20;
+            int itemToAdd3 = 30;
+            int itemToAdd4 = 40;
+            int itemToAdd5 = 50;
+            int expected = 5;
+            int actual;
+
+            // act
+            testList.Add(itemToAdd1);
+            testList.Add(itemToAdd2);
+            testList.Add(itemToAdd3);
+            testList.Add(itemToAdd4);
+            testList.Add(itemToAdd5);
+            actual = testList.Count;
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+
 
 
         //Remove Tests
